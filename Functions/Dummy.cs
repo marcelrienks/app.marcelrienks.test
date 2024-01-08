@@ -21,7 +21,8 @@ namespace app.marcelrienks.test.Functions
         [Function("Dummy")]
         public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req, [FromBody]PostRequest postRequest)
         {
-            _logger.LogInformation("entry...");
+            _logger.LogInformation("...Info entry..");
+            _logger.LogDebug("...Debug entry..");
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "Application/json");
