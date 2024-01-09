@@ -1,12 +1,18 @@
 {
-    "version": "2.0",
-    "logging": {
-        "applicationInsights": {
-            "samplingSettings": {
-                "isEnabled": true,
-                "excludedTypes": "Request"
-            },
-            "enableLiveMetricsFilters": true
-        }
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": false,
+        "excludedTypes": "Request"
+      },
+      "enableLiveMetricsFilters": true
     }
+  },
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    "ClientId": "7b798ce7-f3c4-4cbe-8086-a2c2208e2907",
+    "TenantId": "49d07e3c-6f3e-41b1-b125-5975cea31b4c",
+    "Scopes": "test"
+  }
 }

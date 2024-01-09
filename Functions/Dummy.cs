@@ -4,6 +4,7 @@ using app.marcelrienks.test.Models;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
+using Microsoft.Identity.Web.Resource;
 
 namespace app.marcelrienks.test.Functions
 {
@@ -21,9 +22,6 @@ namespace app.marcelrienks.test.Functions
         [Function("Dummy")]
         public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req, [FromBody]PostRequest postRequest)
         {
-            _logger.LogInformation("...Info entry..");
-            _logger.LogDebug("...Debug entry..");
-
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "Application/json");
             response.WriteString(_dummyService.PadMessage(postRequest.Message));
